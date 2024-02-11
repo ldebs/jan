@@ -68,8 +68,8 @@ const BottomBar = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-16 z-20 flex h-12 w-[calc(100%-64px)] items-center justify-between border-t border-border bg-background/80 px-3">
-      <div className="flex flex-shrink-0 items-center gap-x-2">
+    <div className="border-border bg-background/80 fixed bottom-0 left-[72px] z-20 flex h-10 w-[calc(100%-72px)] items-center justify-between border-t px-3">
+      {/* <div className="flex flex-shrink-0 items-center gap-x-2">
         <div className="flex items-center space-x-2">
           {progress && progress > 0 ? (
             <ProgressBar total={100} used={progress} />
@@ -164,7 +164,7 @@ const BottomBar = () => {
             )}
           </Tooltip>
         )}
-        {/* VERSION is defined by webpack, please see next.config.js */}
+        
         <span className="text-xs text-muted-foreground">
           Jan v{VERSION ?? ''}
         </span>
@@ -192,7 +192,7 @@ const BottomBar = () => {
               </div>
             ))}
         </div>
-      </div>
+      </div> */}
       <CommandListDownloadedModel />
     </div>
   )
