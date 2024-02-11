@@ -17,6 +17,10 @@ export enum NativeRoute {
 export enum AppRoute {
   getAppConfigurations = 'getAppConfigurations',
   updateAppConfiguration = 'updateAppConfiguration',
+  relaunch = 'relaunch',
+  closeApp = 'closeApp',
+  maximizeApp = 'maximizeApp',
+  minimizeApp = 'minimizeApp',
   joinPath = 'joinPath',
   isSubdirectory = 'isSubdirectory',
   baseName = 'baseName',
