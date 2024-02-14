@@ -32,11 +32,9 @@ import {
 
 type Props = {
   model: Model
-  onClick: () => void
-  open: string
 }
 
-const HubHeaderItem: React.FC<Props> = ({ model, onClick, open }) => {
+const HubHeaderItem: React.FC<Props> = ({ model }) => {
   const { downloadModel } = useDownloadModel()
   const downloadedModels = useAtomValue(downloadedModelsAtom)
   const { requestCreateNewThread } = useCreateNewThread()
@@ -123,7 +121,7 @@ const HubHeaderItem: React.FC<Props> = ({ model, onClick, open }) => {
   }
 
   return (
-    <div className="cursor-pointer" onClick={onClick}>
+    <div className="cursor-pointer">
       <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
         <h6 className={styles.title}>{model.name}</h6>
         <div className="inline-flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

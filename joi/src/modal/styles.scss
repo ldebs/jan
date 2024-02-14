@@ -1,0 +1,17 @@
+.modal {
+  &-backdrop {
+    @apply fixed inset-0 z-50 backdrop-blur-sm;
+    background-color: hsl(var(--modal-bg, var(--app-wrapper-bg)), 50%);
+  }
+
+  &-content {
+    @apply fixed left-[50%] top-[50%] z-50 grid w-[calc(100%-32px)] md:w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 p-4 shadow-lg duration-200 rounded-lg;
+    background-color: hsl(var(--app-wrapper-bg));
+    color: hsl(var(--app-wrapper-fg));
+    border: 1px solid hsl(var(--modal-border));
+  }
+
+  &-close {
+    @apply absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none;
+  }
+}

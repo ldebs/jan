@@ -15,7 +15,7 @@ import { Switch, Button, Input } from '@janhq/joi'
 
 import { twMerge } from 'tailwind-merge'
 
-import ShortcutModal from '@/containers/ShortcutModal'
+import ModalShortcut from '@/containers/Modals/Shortcut'
 
 import { snackbar, toaster } from '@/containers/Toast'
 
@@ -115,8 +115,7 @@ const Advanced = () => {
             Shortcuts that you might find useful in Jan app.
           </p>
         </div>
-        {/* fix button */}
-        {/* <ShortcutModal /> */}
+        <ModalShortcut />
       </div>
 
       {/* Experimental */}

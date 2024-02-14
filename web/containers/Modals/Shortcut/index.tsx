@@ -1,13 +1,6 @@
 import React from 'react'
 
-import { Button } from '@janhq/joi'
-import {
-  Modal,
-  ModalTrigger,
-  ModalContent,
-  ModalHeader,
-  ModalTitle,
-} from '@janhq/uikit'
+import { Button, Modal, ModalTrigger, ModalContent } from '@janhq/joi'
 
 const availableShortcuts = [
   {
@@ -51,37 +44,26 @@ const availableShortcuts = [
 const ShortcutModal: React.FC = () => (
   <Modal>
     <ModalTrigger>
-      <div>
-        <Button size="small" theme="primary" variant="soft">
-          Show
-        </Button>
-      </div>
+      <Button size="small" theme="primary" variant="soft" asChild>
+        <div>Show</div>
+      </Button>
     </ModalTrigger>
     <ModalContent className="max-w-2xl">
-      <ModalHeader>
-        <ModalTitle>Keyboard Shortcuts</ModalTitle>
-      </ModalHeader>
-      <div className="my-2 flex flex-col items-center justify-center gap-2">
-        <div className="border-border flex w-full gap-4 border-b pb-2">
+      <h6 className="text-base font-semibold">Keyboard Shortcuts</h6>
+      <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex w-full gap-4">
           <div className="w-1/2 py-2">
-            <h6>Combination</h6>
+            <h6 className="font-semibold">Combination</h6>
           </div>
           <div className="w-full py-2">
-            <h6>Description</h6>
+            <h6 className="font-semibold">Description</h6>
           </div>
         </div>
-        {availableShortcuts.map((shortcut, index) => {
+        {availableShortcuts.map((shortcut) => {
           return (
-            <div
-              key={shortcut.combination}
-              className={
-                index === availableShortcuts.length - 1
-                  ? 'flex w-full gap-4 pb-2'
-                  : 'border-border flex w-full gap-4 border-b pb-2'
-              }
-            >
+            <div key={shortcut.combination} className="flex w-full gap-4 pb-2">
               <div className="w-1/2 py-2">
-                <div className="bg-secondary text-muted-foreground inline-flex items-center justify-center rounded-full px-1 py-0.5 text-xs font-bold">
+                <div className="font-bold">
                   <p>{`${shortcut.modifierKeys?.[0] ?? ''} ${
                     shortcut.combination
                   }`}</p>
