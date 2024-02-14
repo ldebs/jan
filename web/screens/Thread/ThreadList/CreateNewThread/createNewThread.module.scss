@@ -1,0 +1,4 @@
+.createNewThread {
+  @apply relative -inset-4 flex w-[calc(100%+32px)] items-center p-4;
+  border-bottom: 1px solid hsl(var(--app-border));
+}

@@ -6,11 +6,10 @@ import { MainViewState } from '@/constants/screens'
 
 import { useMainViewState } from '@/hooks/useMainViewState'
 
-import ChatScreen from '@/screens/Chat'
-
 import HubScreen from '@/screens/Hub'
 import LocalServerScreen from '@/screens/LocalServer'
 import SettingsScreen from '@/screens/Settings'
+import ThreadScreen from '@/screens/Thread'
 
 export default function Page() {
   const { mainViewState } = useMainViewState()
@@ -30,7 +29,7 @@ export default function Page() {
       break
 
     default:
-      children = <ChatScreen />
+      children = <ThreadScreen />
       break
   }
 

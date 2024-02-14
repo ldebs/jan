@@ -2,29 +2,30 @@
   @apply flex h-full;
 
   .leftPanel {
-    background-color: hsl(var(--setting-left-panel-bg));
-    color: hsl(var(--setting-left-panel-fg));
+    background-color: hsl(var(--setting-list-panel-bg, var(--list-panel-bg)));
+    color: hsl(var(--setting-list-panel-fg, var(--list-panel-fg)));
   }
 
   .resizeHandler {
     @apply lg:block;
     position: relative;
-    border-right: 1px solid hsl(var(--setting-left-panel-border));
+    border-right: 1px solid
+      hsl(var(--setting-list-panel-border, var(--app-border)));
   }
 
   .menuActive {
     @apply absolute inset-0 -left-3 h-full w-[calc(100%+24px)] rounded-md;
-    background-color: hsl(var(--setting-left-panel-active-bg));
+    background-color: hsl(var(--setting-list-panel-active-bg));
   }
 
   .listItem {
     @apply flex w-full items-start justify-between py-4;
-    border-bottom: 1px solid hsl(var(--setting-list-item-border));
+    border-bottom: 1px solid hsl(var(--setting-item-border), var(--app-border));
   }
 
   .listItemTitle {
     @apply font-bold capitalize;
-    color: hsl(var(--setting-list-item-title, var(--app-wrapper-fg)));
+    color: hsl(var(--setting-list-title));
   }
 
   .listItemWrapper {
@@ -33,8 +34,6 @@
 
   .listItemDescription {
     @apply mt-1 leading-relaxed;
-    color: hsl(
-      var(--setting-list-item-description, var(--app-wrapper-fg), 50%)
-    );
+    color: hsl(var(--setting-list-item-description));
   }
 }

@@ -17,7 +17,6 @@ const Command = React.forwardRef<
     {...props}
   />
 ));
-Command.displayName = CommandPrimitive.displayName;
 
 interface CommandModalProps extends DialogProps {}
 
@@ -53,8 +52,6 @@ const CommandInput = React.forwardRef<
   </div>
 ));
 
-CommandInput.displayName = CommandPrimitive.Input.displayName;
-
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
@@ -66,16 +63,12 @@ const CommandList = React.forwardRef<
   />
 ));
 
-CommandList.displayName = CommandPrimitive.List.displayName;
-
 const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
 >((props, ref) => (
   <CommandPrimitive.Empty ref={ref} className="command-empty" {...props} />
 ));
-
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 const CommandGroup = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Group>,
@@ -88,8 +81,6 @@ const CommandGroup = React.forwardRef<
   />
 ));
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName;
-
 const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
@@ -100,7 +91,6 @@ const CommandSeparator = React.forwardRef<
     {...props}
   />
 ));
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
@@ -113,15 +103,12 @@ const CommandItem = React.forwardRef<
   />
 ));
 
-CommandItem.displayName = CommandPrimitive.Item.displayName;
-
 const CommandShortcut = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLSpanElement>) => {
   return <span className={twMerge("command-sc", className)} {...props} />;
 };
-CommandShortcut.displayName = "CommandShortcut";
 
 export {
   Command,

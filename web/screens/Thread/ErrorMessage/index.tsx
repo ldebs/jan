@@ -31,7 +31,7 @@ const ErrorMessage = ({ message }: { message: ThreadMessage }) => {
           </span>
           <Button
             className="w-min"
-            themes="outline"
+            variant="outline"
             onClick={regenerateMessage}
           >
             <RefreshCcw size={14} className="" />

@@ -1,5 +1,6 @@
 .bottomBar {
   @apply fixed bottom-0 left-[72px] z-20 flex h-10 w-[calc(100%-72px)] items-center justify-center px-4 md:justify-between;
   background-color: hsl(var(--bottom-bar-bg));
-  border-top: 1px solid hsl(var(--bottom-bar-border));
+  color: hsl(var(--bottom-bar-fg));
+  border-top: 1px solid hsl(var(--bottom-bar-border, var(--app-border)));
 }

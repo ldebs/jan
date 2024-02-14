@@ -1,5 +1,5 @@
 import terser from "@rollup/plugin-terser";
-import autoprefixer from "autoprefixer";
+
 import commonjs from "rollup-plugin-commonjs";
 import json from "rollup-plugin-json";
 import nodeResolve from "rollup-plugin-node-resolve";
@@ -33,7 +33,7 @@ export default [
         useTsconfigDeclarationDir: true,
       }),
       postcss({
-        plugins: [autoprefixer(), tailwindcss(tailwindConfig)],
+        plugins: [tailwindcss(tailwindConfig)],
         sourceMap: true,
         use: ["sass"],
         minimize: true,
@@ -49,6 +49,16 @@ export default [
       "tailwindcss",
       "class-variance-authority",
       "react-resizable-panels",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-icons",
+      "@radix-ui/react-scroll-area",
+      "@radix-ui/react-select",
+      "@radix-ui/react-slider",
+      "@radix-ui/react-slot",
+      "@radix-ui/react-tooltip",
+      "autoprefixer",
+      "class-variance-authority",
+      "cmdk",
     ],
   },
 ];

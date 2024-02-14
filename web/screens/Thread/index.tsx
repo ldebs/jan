@@ -3,6 +3,15 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import { useDropzone } from 'react-dropzone'
 
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+  ScrollArea,
+  ScrollBar,
+  useMediaQuery,
+} from '@janhq/joi'
+import { m } from 'framer-motion'
 import { useAtomValue, useSetAtom } from 'jotai'
 
 import { UploadCloudIcon } from 'lucide-react'
@@ -23,13 +32,13 @@ import { FeatureToggleContext } from '@/context/FeatureToggle'
 import { activeModelAtom } from '@/hooks/useActiveModel'
 import { queuedMessageAtom, reloadModelAtom } from '@/hooks/useSendChatMessage'
 
-import ChatBody from '@/screens/Chat/ChatBody'
+import ChatBody from '@/screens/Thread/ChatBody'
 
-import ThreadList from '@/screens/Chat/ThreadList'
+import ThreadList from '@/screens/Thread/ThreadList'
 
 import ChatInput from './ChatInput'
 import RequestDownloadModel from './RequestDownloadModel'
-import Sidebar from './Sidebar'
+import ThreadSettings from './ThreadSettings'
 
 import {
   activeThreadAtom,
@@ -53,7 +62,7 @@ const renderError = (code: string) => {
   }
 }
 
-const ChatScreen: React.FC = () => {
+const ThreadScreen = () => {
   const activeThread = useAtomValue(activeThreadAtom)
   const showLeftSideBar = useAtomValue(showLeftSideBarAtom)
   const engineParamsUpdate = useAtomValue(engineParamsUpdateAtom)
@@ -64,6 +73,7 @@ const ChatScreen: React.FC = () => {
   const [dragRejected, setDragRejected] = useState({ code: '' })
   const setFileUpload = useSetAtom(fileUploadAtom)
   const { experimentalFeature } = useContext(FeatureToggleContext)
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const activeModel = useAtomValue(activeModelAtom)
 
@@ -139,14 +149,35 @@ const ChatScreen: React.FC = () => {
 
   return (
     <div className="flex h-full w-full">
-      {/* Left side bar */}
-      {showLeftSideBar ? (
-        <div className="border-border flex h-full w-60 flex-shrink-0 flex-col overflow-y-auto border-r">
-          <ThreadList />
-        </div>
-      ) : null}
+      <ResizablePanelGroup direction={isMobile ? 'vertical' : 'horizontal'}>
+        {/* TODO Faisal check back showLeftSideBar */}
+        {/* Left sidebar */}
+        <ThreadList />
 
-      <div
+        <ResizableHandle disabled={isMobile} />
+
+        <ResizablePanel minSize={40}>
+          <ScrollArea className="h-full w-full">
+            <div className="px-4 pb-4 pt-2 md:px-6 md:pt-4">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Nostrum, optio eaque quos facilis quod et sapiente iste suscipit
+                ipsum ducimus provident minus nisi tempore rem reprehenderit,
+                distinctio cupiditate iure. Placeat.
+              </p>
+            </div>
+          </ScrollArea>
+        </ResizablePanel>
+
+        <ResizableHandle disabled={isMobile} />
+
+        {/* Right side bar */}
+        {/* TODO Faisal check back showRightSideBar */}
+        {/* Right / Setting sidebar */}
+        {activeThread && <ThreadSettings />}
+      </ResizablePanelGroup>
+
+      {/* <div
         className="bg-background relative flex h-full w-full flex-col overflow-auto outline-none"
         {...getRootProps()}
       >
@@ -207,12 +238,9 @@ const ChatScreen: React.FC = () => {
           {activeModel && isGeneratingResponse && <GenerateResponse />}
           <ChatInput />
         </div>
-      </div>
-
-      {/* Right side bar */}
-      {activeThread && <Sidebar />}
+      </div> */}
     </div>
   )
 }
 
-export default ChatScreen
+export default ThreadScreen

@@ -14,31 +14,31 @@
   // Primary
   &--primary {
     @apply text-white;
-    background-color: hsl(var(--bg-primary));
+    background-color: hsl(var(--app-primary));
 
     // Variant soft primary
     &.btn--soft {
-      background-color: hsl(var(--bg-primary), 10%);
-      color: hsl(var(--bg-primary));
+      background-color: hsl(var(--app-primary), 10%);
+      color: hsl(var(--app-primary));
       &:hover {
-        background-color: hsl(var(--bg-primary), 20%);
+        background-color: hsl(var(--app-primary), 20%);
       }
     }
 
     // Variant outline primary
     &.btn--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-primary));
-      color: hsl(var(--bg-primary));
+      border: 1px solid hsl(var(--app-primary));
+      color: hsl(var(--app-primary));
       &:hover {
-        background-color: hsl(var(--bg-primary), 5%);
+        background-color: hsl(var(--app-primary), 5%);
       }
     }
   }
 
   // Secondary
   &--secondary {
-    background-color: hsl(var(--bg-secondary), 10%);
+    background-color: hsl(var(--app-secondary), 10%);
     &:hover {
       filter: brightness(65%);
     }
@@ -46,9 +46,9 @@
     // Variant outline secondary
     &.btn--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-secondary));
+      border: 1px solid hsl(var(--app-secondary));
       &:hover {
-        background-color: hsl(var(--bg-secondary), 5%);
+        background-color: hsl(var(--app-secondary), 5%);
       }
     }
   }
@@ -56,24 +56,24 @@
   // Destructive
   &--destructive {
     @apply text-white;
-    background-color: hsl(var(--bg-destructive));
+    background-color: hsl(var(--app-destructive));
 
     // Variant soft destructive
     &.btn--soft {
-      background-color: hsl(var(--bg-destructive), 10%);
-      color: hsl(var(--bg-destructive));
+      background-color: hsl(var(--app-destructive), 10%);
+      color: hsl(var(--app-destructive));
       &:hover {
-        background-color: hsl(var(--bg-destructive), 20%);
+        background-color: hsl(var(--app-destructive), 20%);
       }
     }
 
     // Variant outline destructive
     &.btn--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-destructive));
-      color: hsl(var(--bg-destructive));
+      border: 1px solid hsl(var(--app-destructive));
+      color: hsl(var(--app-destructive));
       &:hover {
-        background-color: hsl(var(--bg-destructive), 5%);
+        background-color: hsl(var(--app-destructive), 5%);
       }
     }
   }
@@ -81,25 +81,28 @@
   // Size
   &--small {
     @apply h-8 px-3;
-    border-radius: var(--radius-small);
+    border-radius: var(--app-radius-small);
   }
 
   &--medium {
     @apply h-9;
-    border-radius: var(--radius-medium);
+    border-radius: var(--app-radius-medium);
   }
 
   &--large {
     @apply h-11;
-    border-radius: var(--radius-large);
+    border-radius: var(--app-radius-large);
   }
 
   // disabled
-
   &:disabled {
-    background-color: hsl(var(--bg-secondary), 30%);
-    color: hsl(var(--bg-secondary));
+    background-color: hsl(var(--app-secondary), 30%);
+    color: hsl(var(--app-secondary));
     pointer-events: none;
     @apply opacity-50;
+  }
+
+  &--block {
+    width: 100%;
   }
 }

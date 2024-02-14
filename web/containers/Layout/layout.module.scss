@@ -1,5 +1,5 @@
 .layoutWrapper {
-  background-color: hsl(var(--app-wrapper-bg));
-  color: hsl(var(--app-wrapper-fg));
+  background-color: hsl(var(--app-bg));
+  color: hsl(var(--app-fg));
   @apply flex h-screen w-screen flex-1 overflow-hidden;
 }

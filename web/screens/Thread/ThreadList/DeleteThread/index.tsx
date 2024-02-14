@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { memo, useCallback, MouseEvent } from 'react'
 
 import {
   Modal,
@@ -15,10 +15,10 @@ type Props = {
   threadId: string
 }
 
-const DeleteThreadModal: React.FC<Props> = ({ threadId }) => {
+const DeleteThread = ({ threadId }: Props) => {
   const { deleteThread } = useDeleteThread()
   const onDeleteThreadClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    (e: MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation()
       deleteThread(threadId)
     },
@@ -56,4 +56,4 @@ const DeleteThreadModal: React.FC<Props> = ({ threadId }) => {
   )
 }
 
-export default React.memo(DeleteThreadModal)
+export default memo(DeleteThread)

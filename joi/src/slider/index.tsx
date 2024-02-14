@@ -18,6 +18,5 @@ const Slider = React.forwardRef<
     <SliderPrimitive.Thumb className="slider-thumb" />
   </SliderPrimitive.Root>
 ));
-Slider.displayName = SliderPrimitive.Root.displayName;
 
 export { Slider };

@@ -1,0 +1,6 @@
+.threadSettings {
+  .listPanel {
+    @apply whitespace-pre md:h-full md:whitespace-normal;
+    border-left: 1px solid hsl(var(--app-border));
+  }
+}

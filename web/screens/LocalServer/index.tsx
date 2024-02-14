@@ -41,11 +41,11 @@ import { useLogs } from '@/hooks/useLogs'
 import { getConfigurationsData } from '@/utils/componentSettings'
 import { toSettingParams } from '@/utils/modelParam'
 
-import EngineSetting from '../Chat/EngineSetting'
+import EngineSetting from '../Thread/EngineSetting'
 
-import SettingComponentBuilder from '../Chat/ModelSetting/SettingComponent'
+import SettingComponentBuilder from '../Thread/ModelSetting/SettingComponent'
 
-import { showRightSideBarAtom } from '../Chat/Sidebar'
+import { showRightSideBarAtom } from '../Thread/ThreadSettings'
 
 import { serverEnabledAtom } from '@/helpers/atoms/LocalServer.atom'
 import { getActiveThreadModelParamsAtom } from '@/helpers/atoms/Thread.atom'

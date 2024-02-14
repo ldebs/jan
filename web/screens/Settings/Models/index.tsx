@@ -20,46 +20,45 @@ export default function Models() {
   })
 
   return (
-    <div className="relative">
-      <SearchIcon
-        size={20}
-        className="text-muted-foreground absolute left-2 top-1/2 -translate-y-1/2"
-      />
-      <Input
-        placeholder="Search"
-        className="pl-8"
-        onChange={(e) => {
-          setsearchValue(e.target.value)
-        }}
-      />
-    </div>
+    <>
+      <div className="relative">
+        <SearchIcon
+          size={20}
+          className="text-muted-foreground absolute left-2 top-1/2 -translate-y-1/2"
+        />
+        <Input
+          placeholder="Search"
+          className="pl-8"
+          onChange={(e) => {
+            setsearchValue(e.target.value)
+          }}
+        />
+      </div>
+      <div className="relative">
+        <table className="w-full px-8">
+          <thead className="border-border bg-secondary w-full border-b">
+            <tr>
+              {Column.map((col, i) => {
+                return (
+                  <th
+                    key={i}
+                    className="px-6 py-2 text-left font-normal last:text-center"
+                  >
+                    {col}
+                  </th>
+                )
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {filteredDownloadedModels
+              ? filteredDownloadedModels.map((x, i) => {
+                  return <RowModel key={i} data={x} />
+                })
+              : null}
+          </tbody>
+        </table>
+      </div>
+    </>
   )
-}
-
-{
-  /* <div className="relative">
-  <table className="w-full px-8">
-    <thead className="border-border bg-secondary w-full border-b">
-      <tr>
-        {Column.map((col, i) => {
-          return (
-            <th
-              key={i}
-              className="px-6 py-2 text-left font-normal last:text-center"
-            >
-              {col}
-            </th>
-          )
-        })}
-      </tr>
-    </thead>
-    <tbody>
-      {filteredDownloadedModels
-        ? filteredDownloadedModels.map((x, i) => {
-            return <RowModel key={i} data={x} />
-          })
-        : null}
-    </tbody>
-  </table>
-</div> */
 }

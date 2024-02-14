@@ -67,7 +67,7 @@ const TopBar = () => {
         className={twMerge(
           styles.topBar,
           // Conditional padding bc only mac have trafficlight icon
-          isMac ? 'pl-24' : 'pl-4'
+          isMac && window.electronAPI ? 'pl-24' : 'pl-4'
         )}
       >
         <div className="inline-flex h-full items-center space-x-4">
