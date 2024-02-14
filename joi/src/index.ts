@@ -1,5 +1,5 @@
 export * from "./badge";
-// export * from './progress'
+export * from "./progress";
 export * from "./input";
 export * from "./button";
 export * from "./tooltip";
@@ -8,4 +8,8 @@ export * from "./scroll-area";
 export * from "./hooks";
 export * from "./switch";
 export * from "./modal";
-// export * from './checkbox'
+export * from "./checkbox";
+export * from "./command";
+export * from "./select";
+export * from "./slider";
+export * from "./textarea";
