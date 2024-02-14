@@ -158,20 +158,14 @@ const BottomBar = () => {
         <div className="mt-1 flex items-center gap-x-3">
           {menuLinks.map((link, i) => (
             <div className="relative" key={i}>
-              <Tooltip
-                sideOffset={8}
-                trigger={
-                  <a
-                    href={link.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative flex w-full flex-shrink-0 cursor-pointer items-center justify-center"
-                  >
-                    {link.icon}
-                  </a>
-                }
-                content={link.name}
-              />
+              <a
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex w-full flex-shrink-0 cursor-pointer items-center justify-center"
+              >
+                {link.icon}
+              </a>
             </div>
           ))}
         </div>

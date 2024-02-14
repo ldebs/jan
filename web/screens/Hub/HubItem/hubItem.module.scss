@@ -1,0 +1,20 @@
+.hubItem {
+  @apply mb-6 flex flex-col overflow-hidden rounded-xl;
+  background-color: hsl(var(--hub-item-bg));
+  border: 1px solid hsl(var(--hub-item-border));
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsl(var(--hub-item-bg));
+  }
+
+  .title {
+    @apply text-base font-semibold;
+    color: hsl(var(--hub-item-title));
+  }
+
+  .description {
+    @apply mt-2 leading-relaxed;
+    color: hsl(var(--hub-item-description));
+  }
+}

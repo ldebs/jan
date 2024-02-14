@@ -1,12 +1,13 @@
 import { useState } from 'react'
 
-import { Input, Button, useDebouncedState } from '@janhq/joi'
+import { Input, Button, useDebouncedState, ScrollArea } from '@janhq/joi'
 
 import { useAtomValue } from 'jotai'
 import { SearchIcon, Settings2Icon } from 'lucide-react'
 
 import { twMerge } from 'tailwind-merge'
 
+import HubList from './HubList'
 import styles from './hub.module.scss'
 
 import {
@@ -18,35 +19,38 @@ export default function HubScreen() {
   const [searchValue, setsearchValue] = useDebouncedState('', 400)
   const configuredModels = useAtomValue(configuredModelsAtom)
   const downloadedModels = useAtomValue(downloadedModelsAtom)
-  const [showFilter, setShowFilter] = useState(false)
+  // const [showFilter, setShowFilter] = useState(false)
+  const sortMenu = ['All Models', 'Recommended', 'Downloaded']
+  const [sortSelected, setSortSelected] = useState('All Models')
 
-  // const filteredModels = configuredModels.filter((x) => {
-  //   if (sortSelected === 'Downloaded') {
-  //     return (
-  //       x.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-  //       downloadedModels.some((y) => y.id === x.id)
-  //     )
-  //   } else if (sortSelected === 'Recommended') {
-  //     return (
-  //       x.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-  //       x.metadata.tags.includes('Featured')
-  //     )
-  //   } else {
-  //     return x.name.toLowerCase().includes(searchValue.toLowerCase())
-  //   }
-  // })
-
-  console.log(searchValue, 'searchValue')
-  console.log(configuredModels, 'configuredModels')
-  console.log(downloadedModels, 'downloadedModels')
+  const filteredModels = configuredModels.filter((x) => {
+    if (sortSelected === 'Downloaded') {
+      return (
+        x.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+        downloadedModels.some((y) => y.id === x.id)
+      )
+    } else if (sortSelected === 'Recommended') {
+      return (
+        x.name.toLowerCase().includes(searchValue.toLowerCase()) &&
+        x.metadata.tags.includes('Featured')
+      )
+    } else {
+      return x.name.toLowerCase().includes(searchValue.toLowerCase())
+    }
+  })
 
   return (
     <div className={styles.hub}>
       <div className={styles.hubContent}>
         <div className={styles.hubHeader}>
-          <div className="mx-auto flex h-full flex-col items-center justify-center px-4 lg:w-1/2">
+          <div
+            className={twMerge(
+              'mx-auto flex h-full flex-col items-center justify-center px-4 md:w-1/2'
+              // showFilter && 'md:w-full lg:w-1/2'
+            )}
+          >
             <h1 className="mb-4 text-2xl font-bold">Discover models</h1>
-            <div className="w-full">
+            <div className="flex w-full flex-col items-center justify-center">
               <div className="flex w-full gap-x-2">
                 <Input
                   prefixIcon={<SearchIcon size={16} />}
@@ -55,15 +59,16 @@ export default function HubScreen() {
                     setsearchValue(e.target.value)
                   }}
                 />
-                <Button
+                {/* Temporary disable hub filter sidebar, will implement next feature revamp */}
+                {/* <Button
                   theme="secondary"
                   onClick={() => setShowFilter(!showFilter)}
                 >
                   <Settings2Icon size={16} />
-                </Button>
+                </Button> */}
               </div>
               <div className="mt-4">
-                <Button size="small" variant="soft" asChild>
+                <Button size="small" variant="outline" asChild>
                   <a
                     href="https://jan.ai/guides/using-models/import-manually/"
                     target="_blank"
@@ -75,16 +80,22 @@ export default function HubScreen() {
             </div>
           </div>
         </div>
+
+        <div className="relative h-[calc(100%-200px)]">
+          <ScrollArea className="h-full">
+            <HubList models={filteredModels} />
+          </ScrollArea>
+        </div>
       </div>
 
-      <div className={twMerge(styles.hubFilter, showFilter && styles.isShow)}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-          voluptatem culpa consectetur eos ab, hic eius. Iste corporis libero
-          hic similique provident, possimus tempore iure, cumque modi inventore
-          ducimus tenetur.
-        </p>
-      </div>
+      {/* TODO Faisal do when hub revamp */}
+      {/* Filter sidebar will be here */}
+      {/* <div
+        className={twMerge(
+          styles.hubFilter
+          showFilter && styles.isShow
+        )}
+      ></div> */}
     </div>
   )
 }

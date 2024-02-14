@@ -10,6 +10,7 @@ export interface TooltipProps {
   side?: "top" | "right" | "bottom" | "left";
   open?: boolean;
   hidden?: boolean;
+  asChild?: boolean;
   sideOffset?: number;
   onOpenChange?: (open: boolean) => void;
 }
@@ -21,6 +22,7 @@ const Tooltip = ({
   side = "top",
   hidden,
   open,
+  asChild,
   onOpenChange,
 }: TooltipProps) => {
   return (
@@ -30,7 +32,9 @@ const Tooltip = ({
         open={open}
         onOpenChange={onOpenChange}
       >
-        <TooltipPrimitive.Trigger>{trigger}</TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Trigger asChild={asChild}>
+          {trigger}
+        </TooltipPrimitive.Trigger>
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
             sideOffset={sideOffset}

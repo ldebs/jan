@@ -2,6 +2,8 @@ import { useMemo } from 'react'
 
 import { Model } from '@janhq/core'
 
+import { Button } from '@janhq/joi'
+
 import {
   Modal,
   ModalTrigger,
@@ -9,7 +11,6 @@ import {
   ModalFooter,
   ModalContent,
   ModalHeader,
-  Button,
   ModalTitle,
   Progress,
 } from '@janhq/uikit'
@@ -43,11 +44,9 @@ const ModalCancelDownload: React.FC<Props> = ({ model, isFromList }) => {
     <Modal>
       <ModalTrigger asChild>
         {isFromList ? (
-          <Button themes="outline" size="sm">
-            {cancelText}
-          </Button>
+          <Button size="small">{cancelText}</Button>
         ) : (
-          <Button themes="secondaryBlue">
+          <Button>
             <div className="flex items-center space-x-2">
               <span className="inline-block">Cancel</span>
               <Progress
@@ -74,11 +73,10 @@ const ModalCancelDownload: React.FC<Props> = ({ model, isFromList }) => {
         <ModalFooter>
           <div className="flex gap-x-2">
             <ModalClose asChild>
-              <Button themes="ghost">No</Button>
+              <Button>No</Button>
             </ModalClose>
             <ModalClose asChild>
               <Button
-                themes="danger"
                 onClick={() => {
                   if (downloadState?.modelId) {
                     const model = downloadingModels.find(
