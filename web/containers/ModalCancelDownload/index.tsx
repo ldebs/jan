@@ -8,12 +8,9 @@ import {
   Modal,
   ModalTrigger,
   ModalClose,
-  ModalFooter,
   ModalContent,
-  ModalHeader,
-  ModalTitle,
   Progress,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 
 import { atom, useAtomValue } from 'jotai'
 
@@ -63,34 +60,30 @@ const ModalCancelDownload: React.FC<Props> = ({ model, isFromList }) => {
         )}
       </ModalTrigger>
       <ModalContent>
-        <ModalHeader>
-          <ModalTitle>Cancel Download</ModalTitle>
-        </ModalHeader>
+        <h6 className="text-base font-semibold">Cancel Download</h6>
         <p>
           Are you sure you want to cancel the download of&nbsp;
           {downloadState?.modelId}?
         </p>
-        <ModalFooter>
-          <div className="flex gap-x-2">
-            <ModalClose asChild>
-              <Button>No</Button>
-            </ModalClose>
-            <ModalClose asChild>
-              <Button
-                onClick={() => {
-                  if (downloadState?.modelId) {
-                    const model = downloadingModels.find(
-                      (model) => model.id === downloadState.modelId
-                    )
-                    if (model) abortModelDownload(model)
-                  }
-                }}
-              >
-                Yes
-              </Button>
-            </ModalClose>
-          </div>
-        </ModalFooter>
+        <div className="flex gap-x-2">
+          <ModalClose asChild>
+            <Button>No</Button>
+          </ModalClose>
+          <ModalClose asChild>
+            <Button
+              onClick={() => {
+                if (downloadState?.modelId) {
+                  const model = downloadingModels.find(
+                    (model) => model.id === downloadState.modelId
+                  )
+                  if (model) abortModelDownload(model)
+                }
+              }}
+            >
+              Yes
+            </Button>
+          </ModalClose>
+        </div>
       </ModalContent>
     </Modal>
   )

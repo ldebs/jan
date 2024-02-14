@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 import React from 'react'
 
-import { Button } from '@janhq/uikit'
+import { Button } from '@janhq/joi'
 import { useAtomValue } from 'jotai'
 
 import { CopyIcon, CheckIcon } from 'lucide-react'

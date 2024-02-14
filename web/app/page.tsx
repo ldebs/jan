@@ -7,7 +7,6 @@ import { MainViewState } from '@/constants/screens'
 import { useMainViewState } from '@/hooks/useMainViewState'
 
 import ChatScreen from '@/screens/Chat'
-import ExploreModelsScreen from '@/screens/ExploreModels'
 
 import HubScreen from '@/screens/Hub'
 import LocalServerScreen from '@/screens/LocalServer'
@@ -19,19 +18,19 @@ export default function Page() {
   let children = null
   switch (mainViewState) {
     case MainViewState.Hub:
-      children = <ExploreModelsScreen />
+      children = <HubScreen />
       break
 
     case MainViewState.Settings:
       children = <SettingsScreen />
       break
 
-    // case MainViewState.LocalServer:
-    //   children = <LocalServerScreen />
-    //   break
+    case MainViewState.LocalServer:
+      children = <LocalServerScreen />
+      break
 
     default:
-      children = <HubScreen />
+      children = <ChatScreen />
       break
   }
 

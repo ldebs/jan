@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import ScrollToBottom from 'react-scroll-to-bottom'
 
 import { InferenceEngine, MessageStatus } from '@janhq/core'
-import { Button } from '@janhq/uikit'
+import { Button } from '@janhq/joi'
 import { useAtomValue } from 'jotai'
 
 import LogoMark from '@/containers/Brand/Logo/Mark'

@@ -53,8 +53,8 @@ yarn build:core
 # Packing base plugins
 yarn build:plugins
 
-# Packing uikit
-yarn build:uikit
+# Packing joi
+yarn build:joi
 ```
 
 3. Run development and using Jan
@@ -81,8 +81,8 @@ yarn build:core
 # Package base plugins
 yarn build:plugins
 
-# Packing uikit
-yarn build:uikit
+# Packing joi
+yarn build:joi
 
 # Build the app
 yarn build

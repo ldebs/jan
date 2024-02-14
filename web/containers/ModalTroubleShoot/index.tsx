@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ScrollToBottom from 'react-scroll-to-bottom'
 
-import { Modal, ModalContent, ModalHeader, ModalTitle } from '@janhq/uikit'
+import { Modal, ModalContent } from '@janhq/joi'
 import { motion as m } from 'framer-motion'
 import { atom, useAtom } from 'jotai'
 import { twMerge } from 'tailwind-merge'
@@ -23,9 +23,7 @@ const ModalTroubleShooting: React.FC = () => {
   return (
     <Modal open={modalTroubleShooting} onOpenChange={setModalTroubleShooting}>
       <ModalContent className="max-w-[60%] pb-4 pt-8">
-        <ModalHeader>
-          <ModalTitle>Troubleshooting Assistance</ModalTitle>
-        </ModalHeader>
+        <h6 className="text-base font-semibold">Troubleshooting Assistance</h6>
         <p className="text-muted-foreground -mt-2 pr-3 leading-relaxed">
           {`We're here to help! Your report is crucial for debugging and shaping
           the next version. Here’s how you can report & get further support:`}

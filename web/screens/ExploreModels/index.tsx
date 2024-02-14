@@ -10,7 +10,7 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 
 import { useAtomValue } from 'jotai'
 import { SearchIcon } from 'lucide-react'

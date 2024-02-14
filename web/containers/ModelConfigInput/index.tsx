@@ -1,5 +1,5 @@
 import { Tooltip } from '@janhq/joi'
-import { Textarea } from '@janhq/uikit'
+import { Textarea } from '@janhq/joi'
 
 import { InfoIcon } from 'lucide-react'
 

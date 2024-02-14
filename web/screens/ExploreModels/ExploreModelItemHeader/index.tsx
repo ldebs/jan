@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react'
 
 import { Model } from '@janhq/core'
 import { Tooltip } from '@janhq/joi'
-import { Badge, Button } from '@janhq/uikit'
+import { Badge, Button } from '@janhq/joi'
 
 import { atom, useAtomValue } from 'jotai'
 

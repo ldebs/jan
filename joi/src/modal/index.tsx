@@ -1,12 +1,7 @@
-import React, {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  HTMLAttributes,
-  forwardRef,
-} from "react";
-import * as ModalPrimitive from "@radix-ui/react-dialog";
+import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
 import { X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
+import * as ModalPrimitive from "@radix-ui/react-dialog";
 
 import "./styles.scss";
 

@@ -3,7 +3,7 @@
 import { forwardRef, useState } from 'react'
 
 import { Model } from '@janhq/core'
-import { Badge } from '@janhq/uikit'
+import { Badge } from '@janhq/joi'
 
 import ExploreModelItemHeader from '@/screens/ExploreModels/ExploreModelItemHeader'
 

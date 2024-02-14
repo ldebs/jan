@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Tooltip } from '@janhq/joi'
-import { Badge } from '@janhq/uikit'
+import { Badge } from '@janhq/joi'
 import { InfoIcon } from 'lucide-react'
 
 const NotEnoughRamLabel: React.FC = () => (

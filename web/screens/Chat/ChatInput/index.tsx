@@ -4,7 +4,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { InferenceEvent, MessageStatus, events } from '@janhq/core'
 
 import { Tooltip } from '@janhq/joi'
-import { Textarea, Button } from '@janhq/uikit'
+import { Textarea, Button } from '@janhq/joi'
 import { useAtom, useAtomValue } from 'jotai'
 import {
   FileTextIcon,

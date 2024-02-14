@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 
 import { Tooltip } from '@janhq/joi'
-import { Input, Textarea, Switch } from '@janhq/uikit'
+import { Input, Textarea, Switch } from '@janhq/joi'
 
 import { atom, useAtomValue } from 'jotai'
 

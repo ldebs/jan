@@ -9,7 +9,7 @@ import {
   CommandItem,
   CommandList,
   Badge,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 
 import { useAtom, useAtomValue } from 'jotai'
 import { DatabaseIcon, CpuIcon } from 'lucide-react'

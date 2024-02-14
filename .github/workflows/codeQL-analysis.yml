@@ -20,7 +20,7 @@ on:
       - "electron/**"
       - .github/workflows/jan-electron-linter-and-test.yml
       - "web/**"
-      - "uikit/**"
+      - "joi/**"
       - "package.json"
       - "node_modules/**"
       - "yarn.lock"
@@ -37,7 +37,7 @@ on:
       - "electron/**"
       - .github/workflows/jan-electron-linter-and-test.yml
       - "web/**"
-      - "uikit/**"
+      - "joi/**"
       - "package.json"
       - "node_modules/**"
       - "yarn.lock"

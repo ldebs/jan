@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { Tooltip, Input } from '@janhq/joi'
-import { Slider } from '@janhq/uikit'
+import { Slider } from '@janhq/joi'
 
 import { InfoIcon } from 'lucide-react'
 

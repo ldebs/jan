@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Input } from '@janhq/uikit'
+import { Input } from '@janhq/joi'
 
 import { useAtomValue } from 'jotai'
 import { SearchIcon } from 'lucide-react'

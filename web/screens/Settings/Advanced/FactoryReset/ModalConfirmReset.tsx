@@ -2,16 +2,12 @@ import React, { useCallback, useState } from 'react'
 
 import {
   Modal,
-  ModalPortal,
   ModalContent,
-  ModalHeader,
-  ModalTitle,
-  ModalFooter,
   ModalClose,
   Button,
   Checkbox,
   Input,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 import { atom, useAtom } from 'jotai'
 
 import useFactoryReset from '@/hooks/useFactoryReset'
@@ -33,13 +29,10 @@ const ModalConfirmReset = () => {
       open={modalValidation}
       onOpenChange={() => setModalValidation(false)}
     >
-      <ModalPortal />
       <ModalContent>
-        <ModalHeader>
-          <ModalTitle>
-            Are you sure you want to reset to default settings?
-          </ModalTitle>
-        </ModalHeader>
+        <h6 className="text-base font-semibold">
+          Are you sure you want to reset to default settings?
+        </h6>
         <p className="text-muted-foreground">
           It will reset the application to its original state, deleting all your
           usage data, including model customizations and conversation history.
@@ -56,7 +49,7 @@ const ModalConfirmReset = () => {
           <Checkbox
             id="currentDirectory"
             checked={currentDirectoryChecked}
-            onCheckedChange={(e) => setCurrentDirectoryChecked(Boolean(e))}
+            onChange={(e) => setCurrentDirectoryChecked(e.target.checked)}
           />
           <div className="mt-0.5 flex flex-col">
             <label
@@ -72,23 +65,21 @@ const ModalConfirmReset = () => {
             </p>
           </div>
         </div>
-        <ModalFooter>
-          <div className="flex gap-x-2">
-            <ModalClose asChild onClick={() => setModalValidation(false)}>
-              <Button themes="outline">Cancel</Button>
-            </ModalClose>
-            <ModalClose asChild>
-              <Button
-                autoFocus
-                themes="danger"
-                disabled={inputValue !== 'RESET'}
-                onClick={onFactoryResetClick}
-              >
-                Reset Now
-              </Button>
-            </ModalClose>
-          </div>
-        </ModalFooter>
+        <div className="flex gap-x-2">
+          <ModalClose asChild onClick={() => setModalValidation(false)}>
+            <Button variant="outline">Cancel</Button>
+          </ModalClose>
+          <ModalClose asChild>
+            <Button
+              autoFocus
+              theme="destructive"
+              disabled={inputValue !== 'RESET'}
+              onClick={onFactoryResetClick}
+            >
+              Reset Now
+            </Button>
+          </ModalClose>
+        </div>
       </ModalContent>
     </Modal>
   )

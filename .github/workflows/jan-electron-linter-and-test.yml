@@ -8,7 +8,7 @@ on:
       - "electron/**"
       - .github/workflows/jan-electron-linter-and-test.yml
       - "web/**"
-      - "uikit/**"
+      - "joi/**"
       - "package.json"
       - "node_modules/**"
       - "yarn.lock"
@@ -25,7 +25,7 @@ on:
       - "electron/**"
       - .github/workflows/jan-electron-linter-and-test.yml
       - "web/**"
-      - "uikit/**"
+      - "joi/**"
       - "package.json"
       - "node_modules/**"
       - "yarn.lock"
@@ -67,7 +67,7 @@ jobs:
   test-on-windows:
     strategy:
       matrix:
-        antivirus-tools: ['mcafee', 'default-windows-security','bit-defender']
+        antivirus-tools: ["mcafee", "default-windows-security", "bit-defender"]
     runs-on: windows-desktop-${{ matrix.antivirus-tools }}
     steps:
       - name: Clean workspace

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button } from '@janhq/uikit'
+import { Button } from '@janhq/joi'
 
 import { CopyIcon, CheckIcon } from 'lucide-react'
 

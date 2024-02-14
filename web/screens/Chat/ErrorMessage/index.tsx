@@ -1,5 +1,5 @@
 import { MessageStatus, ThreadMessage } from '@janhq/core'
-import { Button } from '@janhq/uikit'
+import { Button } from '@janhq/joi'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { RefreshCcw } from 'lucide-react'
 

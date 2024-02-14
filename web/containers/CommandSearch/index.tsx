@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandShortcut,
   CommandList,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 
 import { useAtom } from 'jotai'
 import { MessageCircleIcon, SettingsIcon, LayoutGridIcon } from 'lucide-react'

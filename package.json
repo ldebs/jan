@@ -3,7 +3,6 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "uikit",
       "joi",
       "core",
       "electron",
@@ -11,7 +10,6 @@
       "server"
     ],
     "nohoist": [
-      "uikit",
       "joi",
       "core",
       "electron",
@@ -29,9 +27,8 @@
     "dev:server": "yarn copy:assets && yarn workspace @janhq/server dev",
     "dev": "concurrently --kill-others \"yarn dev:web\" \"wait-on http://localhost:3000 && yarn dev:electron\"",
     "test-local": "yarn lint && yarn build:test && yarn test",
-    "dev:uikit": "yarn workspace @janhq/uikit install && yarn workspace @janhq/uikit dev",
     "dev:joi": "yarn workspace @janhq/joi install && yarn workspace @janhq/joi dev",
-    "build:uikit": "yarn workspace @janhq/uikit install && yarn workspace @janhq/uikit build",
+    "build:joi": "yarn workspace @janhq/joi install && yarn workspace @janhq/joi build",
     "build:server": "yarn copy:assets && cd server && yarn install && yarn run build",
     "build:core": "cd core && yarn install && yarn run build",
     "build:web": "yarn workspace jan-web build && cpx \"web/out/**\" \"electron/renderer/\"",

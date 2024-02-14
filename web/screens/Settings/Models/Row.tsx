@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { InferenceEngine, Model } from '@janhq/core'
 import { Tooltip } from '@janhq/joi'
-import { Badge } from '@janhq/uikit'
+import { Badge } from '@janhq/joi'
 
 import { useAtom } from 'jotai'
 import {

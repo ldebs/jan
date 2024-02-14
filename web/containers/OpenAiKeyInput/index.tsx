@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { InferenceEngine } from '@janhq/core'
-import { Input } from '@janhq/uikit'
+import { Input } from '@janhq/joi'
 
 import { useAtomValue } from 'jotai'
 

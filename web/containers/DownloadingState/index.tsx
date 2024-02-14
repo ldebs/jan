@@ -1,14 +1,6 @@
 import { Fragment } from 'react'
 
-import {
-  Progress,
-  Modal,
-  ModalContent,
-  Button,
-  ModalHeader,
-  ModalTitle,
-  ModalTrigger,
-} from '@janhq/uikit'
+import { Progress, Modal, ModalContent, Button, ModalTrigger } from '@janhq/joi'
 
 import { useAtomValue } from 'jotai'
 
@@ -40,7 +32,7 @@ export default function DownloadingState() {
         <Modal>
           <ModalTrigger asChild>
             <div className="relative block">
-              <Button size="sm" themes="outline">
+              <Button size="small" variant="outline" theme="primary">
                 <span>
                   {Object.values(downloadStates).length} Downloading model
                 </span>
@@ -54,9 +46,7 @@ export default function DownloadingState() {
             </div>
           </ModalTrigger>
           <ModalContent>
-            <ModalHeader>
-              <ModalTitle>Downloading model</ModalTitle>
-            </ModalHeader>
+            <h6 className="text-base font-semibold">Downloading model</h6>
             {Object.values(downloadStates).map((item, i) => (
               <div className="pt-2" key={i}>
                 <Progress
@@ -73,8 +63,9 @@ export default function DownloadingState() {
                     <span>{formatDownloadPercentage(item?.percent)}</span>
                   </div>
                   <Button
-                    themes="outline"
-                    size="sm"
+                    theme="primary"
+                    variant="outline"
+                    size="small"
                     onClick={() => {
                       if (item?.modelId) {
                         const model = downloadingModels.find(

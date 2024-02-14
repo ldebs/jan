@@ -14,7 +14,7 @@ import {
   Input,
   SelectTrigger,
   SelectValue,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 
 import { atom, useAtom, useAtomValue, useSetAtom } from 'jotai'
 

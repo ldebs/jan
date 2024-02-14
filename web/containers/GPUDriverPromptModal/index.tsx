@@ -2,15 +2,7 @@ import React from 'react'
 
 import { openExternalUrl } from '@janhq/core'
 
-import {
-  ModalClose,
-  ModalFooter,
-  ModalContent,
-  Modal,
-  ModalTitle,
-  ModalHeader,
-  Button,
-} from '@janhq/uikit'
+import { ModalClose, ModalContent, Modal, Button } from '@janhq/joi'
 
 import { useAtom } from 'jotai'
 
@@ -35,11 +27,9 @@ const GPUDriverPrompt: React.FC = () => {
     <div>
       <Modal open={showNotification} onOpenChange={openChanged}>
         <ModalContent>
-          <ModalHeader>
-            <ModalTitle className="pr-4 leading-relaxed">
-              Checking for machine that does not meet the requirements.
-            </ModalTitle>
-          </ModalHeader>
+          <h6 className="text-base font-semibold">
+            Checking for machine that does not meet the requirements.
+          </h6>
           <p>
             It appears that you are missing some dependencies required to run in
             GPU mode. Please follow the instructions below for more details{' '}
@@ -64,13 +54,9 @@ const GPUDriverPrompt: React.FC = () => {
             />
             <span>Don&apos;t show again</span>
           </div>
-          <ModalFooter>
-            <div className="flex gap-x-2">
-              <ModalClose asChild>
-                <Button themes="ghost">OK</Button>
-              </ModalClose>
-            </div>
-          </ModalFooter>
+          <ModalClose asChild>
+            <Button theme="secondary">OK</Button>
+          </ModalClose>
         </ModalContent>
       </Modal>
     </div>

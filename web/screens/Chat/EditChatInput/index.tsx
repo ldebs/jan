@@ -10,7 +10,7 @@ import {
   events,
 } from '@janhq/core'
 
-import { Textarea, Button } from '@janhq/uikit'
+import { Textarea, Button } from '@janhq/joi'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 
 import { twMerge } from 'tailwind-merge'

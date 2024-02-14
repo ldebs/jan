@@ -1,5 +1,5 @@
 import { Tooltip, Badge } from '@janhq/joi'
-import { Button } from '@janhq/uikit'
+import { Button } from '@janhq/joi'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 
 import { FaGithub, FaDiscord } from 'react-icons/fa'

@@ -5,12 +5,8 @@ import {
   Modal,
   ModalClose,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalPortal,
-  ModalTitle,
   ModalTrigger,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 import { Paintbrush } from 'lucide-react'
 
 import useDeleteThread from '@/hooks/useDeleteThread'
@@ -39,24 +35,19 @@ const CleanThreadModal: React.FC<Props> = ({ threadId }) => {
           </span>
         </div>
       </ModalTrigger>
-      <ModalPortal />
       <ModalContent>
-        <ModalHeader>
-          <ModalTitle>Clean Thread</ModalTitle>
-        </ModalHeader>
+        <h6 className="text-base font-bold">Clean Thread</h6>
         <p>Are you sure you want to clean this thread?</p>
-        <ModalFooter>
-          <div className="flex gap-x-2">
-            <ModalClose asChild onClick={(e) => e.stopPropagation()}>
-              <Button themes="ghost">No</Button>
-            </ModalClose>
-            <ModalClose asChild>
-              <Button themes="danger" onClick={onCleanThreadClick} autoFocus>
-                Yes
-              </Button>
-            </ModalClose>
-          </div>
-        </ModalFooter>
+        <div className="flex gap-x-2">
+          <ModalClose asChild onClick={(e) => e.stopPropagation()}>
+            <Button theme="secondary">No</Button>
+          </ModalClose>
+          <ModalClose asChild>
+            <Button theme="destructive" onClick={onCleanThreadClick} autoFocus>
+              Yes
+            </Button>
+          </ModalClose>
+        </div>
       </ModalContent>
     </Modal>
   )

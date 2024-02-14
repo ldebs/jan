@@ -3,14 +3,10 @@ import React, { useCallback } from 'react'
 import {
   Modal,
   ModalTrigger,
-  ModalPortal,
   ModalContent,
-  ModalHeader,
-  ModalTitle,
-  ModalFooter,
   ModalClose,
   Button,
-} from '@janhq/uikit'
+} from '@janhq/joi'
 import { Trash2Icon } from 'lucide-react'
 
 import useDeleteThread from '@/hooks/useDeleteThread'
@@ -39,27 +35,22 @@ const DeleteThreadModal: React.FC<Props> = ({ threadId }) => {
           </span>
         </div>
       </ModalTrigger>
-      <ModalPortal />
       <ModalContent>
-        <ModalHeader>
-          <ModalTitle>Delete Thread</ModalTitle>
-        </ModalHeader>
+        <h6 className="text-base font-semibold">Delete Thread</h6>
         <p>
           Are you sure you want to delete this thread? This action cannot be
           undone.
         </p>
-        <ModalFooter>
-          <div className="flex gap-x-2">
-            <ModalClose asChild onClick={(e) => e.stopPropagation()}>
-              <Button themes="ghost">No</Button>
-            </ModalClose>
-            <ModalClose asChild>
-              <Button autoFocus themes="danger" onClick={onDeleteThreadClick}>
-                Yes
-              </Button>
-            </ModalClose>
-          </div>
-        </ModalFooter>
+        <div className="flex gap-x-2">
+          <ModalClose asChild onClick={(e) => e.stopPropagation()}>
+            <Button theme="secondary">No</Button>
+          </ModalClose>
+          <ModalClose asChild>
+            <Button autoFocus theme="destructive" onClick={onDeleteThreadClick}>
+              Yes
+            </Button>
+          </ModalClose>
+        </div>
       </ModalContent>
     </Modal>
   )
