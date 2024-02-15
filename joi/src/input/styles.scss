@@ -1,29 +1,23 @@
-@import "../../styles/bases.scss";
-
-// input token color
-// --input-bg
-// --input-fg
-// --input-border
-// --input-radius
+@import '../../styles/bases.scss';
 
 .input {
   @apply focus-within:outline-none focus-visible:outline-0 focus-visible:ring-2;
   @apply h-9 px-4 w-full;
   border-radius: 6px;
-  border: 1px solid hsl(var(--input-border, var(--app-wrapper-fg), 8%));
-  background-color: hsl(var(--input-bg, var(--app-wrapper-bg), 50%));
-  color: hsl(var(--input-fg, var(--app-wrapper-fg)));
+  border: 1px solid hsl(var(--input-border, var(--app-fg), 8%));
+  background-color: hsl(var(--input-bg, var(--app-bg), 50%));
+  color: hsl(var(--input-fg, var(--app-fg)));
   &:focus-visible {
     outline: red;
   }
 
   &::placeholder {
-    color: hsl(var(--input-fg, var(--app-wrapper-fg)), 40%);
+    color: hsl(var(--input-fg, var(--app-fg)), 40%);
   }
 
   &:disabled {
-    background-color: hsl(var(--input-fg, var(--app-wrapper-fg), 8%));
-    color: hsl(var(--input-fg, var(--app-wrapper-fg)), 20%);
+    background-color: hsl(var(--input-fg, var(--app-fg), 8%));
+    color: hsl(var(--input-fg, var(--app-fg)), 20%);
     border: none;
     cursor: not-allowed;
   }

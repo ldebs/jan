@@ -75,10 +75,7 @@ const ExtensionCatalog = () => {
     <div className="h-full w-full">
       {activeExtensions.map((item, i) => {
         return (
-          <div
-            key={i}
-            className={twMerge('first:!pt-0 last:border-none', styles.listItem)}
-          >
+          <div key={i} className={twMerge('first:!pt-0', styles.listItem)}>
             <div className={styles.listItemWrapper}>
               <div className="flex items-center gap-x-2">
                 <h6 className={styles.listItemTitle}>
@@ -92,7 +89,7 @@ const ExtensionCatalog = () => {
         )
       })}
       {/* Manual Installation */}
-      <div className={twMerge('first:pt-0 last:border-none', styles.listItem)}>
+      <div className={twMerge('!border-none', styles.listItem)}>
         <div className={styles.listItemWrapper}>
           <div className="flex gap-x-2">
             <h6 className={styles.listItemTitle}>Manual Installation</h6>

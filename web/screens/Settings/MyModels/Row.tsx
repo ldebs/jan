@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { InferenceEngine, Model } from '@janhq/core'
-import { Tooltip } from '@janhq/joi'
-import { Badge } from '@janhq/joi'
+
+import { Badge, Tooltip } from '@janhq/joi'
 
 import { useAtom } from 'jotai'
 import {
@@ -60,28 +60,25 @@ export default function RowModel(props: RowModelProps) {
       <td className="px-6 py-4 font-bold">{props.data.name}</td>
       <td className="px-6 py-4 font-bold">{props.data.id}</td>
       <td className="px-6 py-4">
-        <Badge themes="secondary">
+        <Badge theme="secondary">
           {props.data.metadata.size
             ? toGibibytes(props.data.metadata.size)
             : '-'}
         </Badge>
       </td>
       <td className="px-6 py-4">
-        <Badge themes="secondary">v{props.data.version}</Badge>
+        <Badge theme="secondary">v{props.data.version}</Badge>
       </td>
       <td className="px-6 py-4">
         {isRemoteModel ? (
-          <Badge
-            themes="success"
-            className="inline-flex items-center space-x-2"
-          >
+          <Badge theme="success" className="inline-flex items-center space-x-2">
             <span className="h-2 w-2 rounded-full bg-green-500" />
             <span>Active</span>
           </Badge>
         ) : stateModel.loading && stateModel.model === props.data.id ? (
           <Badge
             className="inline-flex items-center space-x-2"
-            themes="secondary"
+            theme="secondary"
           >
             <span className="h-2 w-2 rounded-full bg-gray-500" />
             <span className="capitalize">
@@ -89,16 +86,13 @@ export default function RowModel(props: RowModelProps) {
             </span>
           </Badge>
         ) : activeModel && activeModel.id === props.data.id ? (
-          <Badge
-            themes="success"
-            className="inline-flex items-center space-x-2"
-          >
+          <Badge theme="success" className="inline-flex items-center space-x-2">
             <span className="h-2 w-2 rounded-full bg-green-500" />
             <span>Active</span>
           </Badge>
         ) : (
           <Badge
-            themes="secondary"
+            theme="secondary"
             className="inline-flex items-center space-x-2"
           >
             <span className="h-2 w-2 rounded-full bg-gray-500" />

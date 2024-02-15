@@ -19,7 +19,7 @@ import Advanced from '@/screens/Settings/Advanced'
 import AppearanceOptions from '@/screens/Settings/Appearance'
 import ExtensionCatalog from '@/screens/Settings/CoreExtensions'
 
-import Models from '@/screens/Settings/Models'
+import MyModels from '@/screens/Settings/MyModels'
 
 import { SUCCESS_SET_NEW_DESTINATION } from './Advanced/DataFolder'
 
@@ -52,7 +52,7 @@ const SettingsScreen = () => {
         return <Advanced />
 
       case 'My Models':
-        return <Models />
+        return <MyModels />
     }
   }
 

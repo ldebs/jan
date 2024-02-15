@@ -15,12 +15,14 @@
 
   .menuActive {
     @apply absolute inset-0 -left-3 h-full w-[calc(100%+24px)] rounded-md;
-    background-color: hsl(var(--setting-list-panel-active-bg));
+    background-color: hsl(
+      var(--setting-list-panel-active-bg, var(--app-primary), 15%)
+    );
   }
 
   .listItem {
     @apply flex w-full items-start justify-between py-4;
-    border-bottom: 1px solid hsl(var(--setting-item-border), var(--app-border));
+    border-bottom: 1px solid hsl(var(--setting-item-border, var(--app-border)));
   }
 
   .listItemTitle {
@@ -34,6 +36,6 @@
 
   .listItemDescription {
     @apply mt-1 leading-relaxed;
-    color: hsl(var(--setting-list-item-description));
+    color: hsl(var(--setting-list-item-description, var(--app-muted)));
   }
 }

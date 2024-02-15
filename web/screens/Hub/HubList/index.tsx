@@ -8,7 +8,7 @@ type Props = {
   models: Model[]
 }
 
-const HubList: React.FC<Props> = ({ models }) => {
+const HubList = ({ models }: Props) => {
   const takenModelIds: string[] = []
   const featuredModels = models
     .filter((m) => {

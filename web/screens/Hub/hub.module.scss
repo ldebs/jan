@@ -4,13 +4,13 @@
   .hubHeader {
     background-color: hsl(var(--hub-header-bg));
     height: 200px;
-    border-bottom: 1px solid hsl(var(--hub-header-border));
+    border-bottom: 1px solid hsl(var(--hub-header-border, var(--app-border)));
   }
 
   .hubFilter {
     @apply absolute h-full w-full flex-shrink-0 p-4 md:relative md:w-80;
     background-color: hsl(var(--hub-filter-bg));
-    border-left: 1px solid hsl(var(--hub-filter-border));
+    border-left: 1px solid hsl(var(--hub-filter-border, var(--app-border)));
     display: none;
     &.isShow {
       display: block;

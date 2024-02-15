@@ -1,4 +1,4 @@
-@import "../../styles/bases.scss";
+@import '../../styles/bases.scss';
 
 .badge {
   @apply inline-flex items-center justify-center px-2 font-medium transition-all;
@@ -6,122 +6,122 @@
   // Primary
   &--primary {
     @apply text-white;
-    background-color: hsl(var(--bg-primary));
+    background-color: hsl(var(--app-primary));
 
     // Variant soft primary
     &.badge--soft {
-      background-color: hsl(var(--bg-primary), 10%);
-      color: hsl(var(--bg-primary));
+      background-color: hsl(var(--app-primary), 10%);
+      color: hsl(var(--app-primary));
     }
 
     // Variant outline primary
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-primary));
-      color: hsl(var(--bg-primary));
+      border: 1px solid hsl(var(--app-primary));
+      color: hsl(var(--app-primary));
     }
   }
 
   // Secondary
   &--secondary {
-    background-color: hsl(var(--bg-secondary), 10%);
+    background-color: hsl(var(--app-secondary), 10%);
 
     // Variant outline secondary
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-secondary));
+      border: 1px solid hsl(var(--app-secondary));
     }
   }
 
   // Destructive
   &--destructive {
     @apply text-white;
-    background-color: hsl(var(--bg-destructive));
+    background-color: hsl(var(--app-destructive));
 
     // Variant soft destructive
     &.badge--soft {
-      background-color: hsl(var(--bg-destructive), 10%);
-      color: hsl(var(--bg-destructive));
+      background-color: hsl(var(--app-destructive), 10%);
+      color: hsl(var(--app-destructive));
     }
 
     // Variant outline destructive
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-destructive));
-      color: hsl(var(--bg-destructive));
+      border: 1px solid hsl(var(--app-destructive));
+      color: hsl(var(--app-destructive));
     }
   }
 
   // Success
   &--success {
     @apply text-white;
-    background-color: hsl(var(--bg-success));
+    background-color: hsl(var(--app-success));
 
     // Variant soft success
     &.badge--soft {
-      background-color: hsl(var(--bg-success), 10%);
-      color: hsl(var(--bg-success));
+      background-color: hsl(var(--app-success), 10%);
+      color: hsl(var(--app-success));
     }
 
     // Variant outline success
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-success));
-      color: hsl(var(--bg-success));
+      border: 1px solid hsl(var(--app-success));
+      color: hsl(var(--app-success));
     }
   }
 
   // Warning
   &--warning {
     @apply text-white;
-    background-color: hsl(var(--bg-warning));
+    background-color: hsl(var(--app-warning));
 
     // Variant soft warning
     &.badge--soft {
-      background-color: hsl(var(--bg-warning), 10%);
-      color: hsl(var(--bg-warning));
+      background-color: hsl(var(--app-warning), 10%);
+      color: hsl(var(--app-warning));
     }
 
     // Variant outline warning
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-warning));
-      color: hsl(var(--bg-warning));
+      border: 1px solid hsl(var(--app-warning));
+      color: hsl(var(--app-warning));
     }
   }
 
   // Info
   &--info {
     @apply text-white;
-    background-color: hsl(var(--bg-info));
+    background-color: hsl(var(--app-info));
 
     // Variant soft info
     &.badge--soft {
-      background-color: hsl(var(--bg-info), 10%);
-      color: hsl(var(--bg-info));
+      background-color: hsl(var(--app-info), 10%);
+      color: hsl(var(--app-info));
     }
 
     // Variant outline info
     &.badge--outline {
       background-color: transparent;
-      border: 1px solid hsl(var(--bg-info));
-      color: hsl(var(--bg-info));
+      border: 1px solid hsl(var(--app-info));
+      color: hsl(var(--app-info));
     }
   }
 
   // Size
   &--small {
     @apply h-5;
-    border-radius: var(--radius-small);
+    border-radius: var(--app-radius-small);
   }
 
   &--medium {
     @apply h-6;
-    border-radius: var(--radius-small);
+    border-radius: var(--app-radius-small);
   }
 
   &--large {
     @apply h-7;
-    border-radius: var(--radius-small);
+    border-radius: var(--app-radius-small);
   }
 }
